@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card"> 
+    <div class="row">
+      <i class="fas fa-solid fa-circle-user user-icon"></i>
+    </div> 
+    <div class="row">
+      <h3>LOG IN</h3>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <form #loginform="ngForm">
+          <div class="input-group mb-3">
+            <span class="input-group-text" >Username</span>
+            <input type="text" name="username" id="username" maxlength="50" class="form-control" [(ngModel)]="username" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" name="password" id="password" minlength="10" maxlength="50" class="form-control" [(ngModel)]="password" required>
+          </div>
+          <div class="row">
+            <div class="col">
+                <button onclick="openDetailsPage(person)" class="btn btn-outline-secondary card-button">Cancel</button>
+            </div>
+            <div class="col">
+                <button (click)="verifyLogin()"class="btn btn-outline-primary card-button" [disabled]="loginform.invalid">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  
+</div>

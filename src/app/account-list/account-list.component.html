@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="table-color"><h5>Accounts</h5></th>
+                <th scope="col" class="table-color"></th>
+                <th scope="col" class="table-color"> <a href="#" class="btn btn-outline-light table-button">Add New</a> </th>
+            </tr>
+            <tr>
+                <th scope="col">Account Number</th>
+                <th scope="col">Outstanding Balance</th>
+                <th scope="col"><!--No heading for action column--></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accountList">
+                <td>{{account.account_number}}</td>
+                <td>R {{account.outstanding_balance.toFixed(2)}}</td>
+                <td><button (click)="openAccountDetails(account.code)" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

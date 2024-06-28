@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="input-group search-bar">
+            <input type="text" name="search" class="form-control" placeholder="Search by Name, Surname or ID Number..." aria-label="Search" [(ngModel)]="searchText">
+            <button (click)="filterSearchResults()" class="btn btn-outline-secondary search-bar-button" type="button" id="button-addon2">Search</button>
+            <button (click)="openCreatePersonPage()" class="btn btn-outline-primary">Add New</button>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let person of personList">
+        <div class="card" style="width: 18rem;">
+            <div class="row">
+                <i class="fas fa-solid fa-circle-user user-icon"></i>
+            </div>
+            <div class="row">
+                <div class="card-body card-text">
+                    <h6 class="card-title">{{person.name}} {{person.surname}}</h6>
+                    <p class="card-text">{{person.id_number}}</p>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <button (click)="openDetailsPage(person)" class="btn btn-outline-primary card-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-danger card-button"><i class="fas fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="spacer"></div>
+      </div>
+    </div>
+</div>
+
+

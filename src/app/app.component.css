@@ -1,0 +1,46 @@
+.navbar-background {
+    background-color: #129191 !important;
+}
+
+.navbar-button {
+    color: white !important;
+}
+
+.navbar-button-icon {
+    padding-right: 10px !important;
+}
+
+.button:hover {
+    background-color: #3c9494 !important;
+}
+
+footer {
+    background-color: #129191;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-content li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.socials a:hover,
+.footer-nav a:hover {
+    color: #ddd;
+}

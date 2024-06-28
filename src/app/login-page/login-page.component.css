@@ -1,0 +1,43 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+  
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.user-icon {
+    text-align: center;
+    font-size: 100px;
+    color: #129191 !important;
+    padding-bottom: 0px !important;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 19px;
+}
+
+.card { 
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100% !important;
+    background-color: #dfffff;
+    text-align: center;
+    margin: auto;
+}
+
+.card-button {
+    width: 100% !important;
+}
+
+.card-button-spacer {
+    padding: 10px;
+}

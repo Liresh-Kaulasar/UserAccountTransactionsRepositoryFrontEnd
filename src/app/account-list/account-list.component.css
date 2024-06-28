@@ -1,0 +1,15 @@
+.table-color {
+    background-color: #129191 !important;
+    color: #fff;
+}
+
+.table-button {
+    color: #fff;
+    background-color: transparent; 
+    border-color: #fff;
+}
+
+.table-button:hover {
+    color: #129191 !important;
+    background-color: #fff;
+}

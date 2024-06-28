@@ -1,0 +1,56 @@
+.pageHeading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.card-1 {
+    background-color: #b37f80;
+}
+
+.card {
+    margin: 0.8rem 0;
+    border-radius: 20px;
+    border: none;
+    background-color: #c24871;
+    height: calc(100% - 1.6rem);
+}
+
+.card2 {
+    margin: 0.8rem 0;
+    border-radius: 20px;
+    border: none;
+    background-color: #0167ac;
+    height: calc(100% - 1.6rem);
+}
+
+.card3 {
+    margin: 0.8rem 0;
+    border-radius: 20px;
+    border: none;
+    background-color: #06a548;
+    height: calc(100% - 1.6rem);
+}
+
+.card .card-body {
+    padding: 50px 30px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.display-7 {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.container-fluid {
+    position: relative;
+    word-wrap: break-word;
+}
