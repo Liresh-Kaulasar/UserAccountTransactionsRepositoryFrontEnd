@@ -22,13 +22,19 @@
                             <button (click)="openDetailsPage(person)" class="btn btn-outline-primary card-button"><i class="fa-solid fa-pen-to-square"></i></button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-outline-danger card-button"><i class="fas fa-solid fa-trash"></i></button>
+                            <button class="btn btn-outline-danger card-button" disabled><i class="fas fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
       <div class="spacer"></div>
+      </div>
+      
+    <div class="pagination-controls">
+        <button class="btn btn-outline-primary" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+        <span class="card-text">&nbsp; Page {{currentPage}} of {{totalPages}} &nbsp;</span>
+        <button class="btn btn-outline-primary" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
       </div>
     </div>
 </div>

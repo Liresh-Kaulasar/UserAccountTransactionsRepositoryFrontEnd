@@ -47,6 +47,16 @@ export class PersonDetailsService {
 
   constructor(private http: HttpClient) { }
 
+  getPagedDetailsForPeople(page:Number, pageSize:Number): Observable<any>{
+    return this.http.get(`${this.apiUrl}/api/GetAllPersonalDetailsPagedResult/${page}/${pageSize}`)
+      .pipe(
+        catchError(error => {
+          console.error('There was an error!', error);
+          return throwError('Something bad happened; please try again later.');
+        })
+      );
+  };
+
   getDetailsForPeople(): Observable<any>{
     return this.http.get(`${this.apiUrl}/api/GetAllPersonalDetails`)
       .pipe(

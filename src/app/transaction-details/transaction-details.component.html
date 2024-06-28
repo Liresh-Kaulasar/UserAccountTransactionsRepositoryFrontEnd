@@ -14,13 +14,13 @@
                         <div class="col-sm-3"></div>
                         <div class="col">
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Account Number</span>
-                            <input type="text" class="form-control" maxlength="50" aria-label="Sizing example input" name="account_number" aria-describedby="inputGroup-sizing-default" [(ngModel)]="this.account.account_number" required>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Transaction Date</span>
+                            <input type="datetime-local" class="form-control" name="transaction_date" [(ngModel)]="this.transaction.transaction_date" (ngModelChange)="transaction.transaction_date=$event"required>
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Outstanding Balance</span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" name="outstanding_balance"  aria-describedby="inputGroup-sizing-default" [value]="'R '+this.account.outstanding_balance" disabled>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Amount</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" name="outstanding_balance"  aria-describedby="inputGroup-sizing-default" [ngModel]="'R '+ this.transaction.amount" disabled>
                         </div>
                     </div>
                     <div class="col-sm-3"></div>
@@ -30,10 +30,9 @@
                         <button (click)="cancel()" class="btn btn-outline-secondary card-button">Cancel</button>
                     </div>
                     <div class="col">
-                        <button (click)="updateAccountDetails(account)" class="btn btn-outline-primary card-button" [disabled]="accountForm.invalid">Submit</button>
+                        <button (click)="updateTransactionDetails(transaction)" class="btn btn-outline-primary card-button" [disabled]="accountForm.invalid">Submit</button>
                     </div>
                 </div>
-                <app-transaction-list [account_code]="this.account.code"></app-transaction-list>
                 </div>
             </div> 
         </form>

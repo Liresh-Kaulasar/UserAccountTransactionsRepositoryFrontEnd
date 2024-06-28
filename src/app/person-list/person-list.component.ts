@@ -17,6 +17,14 @@ import { FormsModule } from '@angular/forms';
 export class PersonListComponent {
     personList : Person[] = [];
 
+    personPagedList: Person[] =[];
+
+    currentPage: number = 1;
+
+    totalPages: number = 0;
+
+    itemsPerPage: number = 10;
+
     searchText:string ="";
   
     constructor(private router:Router, private personDetailsService: PersonDetailsService){
@@ -45,10 +53,20 @@ export class PersonListComponent {
     }
     }
 
+    onPageChange(page: number): void {
+      this.currentPage = page;
+      this.personDetailsService.getPagedDetailsForPeople(this.currentPage, this.itemsPerPage).subscribe(response => {
+        this.personList = response as Person[];
+      });
+    }
+
     ngOnInit(){
       this.personDetailsService.getDetailsForPeople().subscribe(response => {
         console.log(response);
         this.personList = response as Person[];
+        this.totalPages = Math.ceil(this.personList.length/this.itemsPerPage);
       });
+
+      this.onPageChange(1);
     }
 }

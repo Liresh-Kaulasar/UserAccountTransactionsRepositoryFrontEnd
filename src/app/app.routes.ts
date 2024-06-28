@@ -8,6 +8,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AddAccountComponent } from './add-account/add-account.component';
+import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
 const routeConfig: Routes = [
     {
@@ -54,6 +55,11 @@ const routeConfig: Routes = [
         path:'account-details/:id/:id2',
         component: AccountDetailsComponent,
         title: 'Account Details'
+    },
+    {
+        path:'transaction-details/:id/:id2',
+        component: TransactionDetailsComponent,
+        title: 'Transaction Details'
     },
     {
         path:'about-us',

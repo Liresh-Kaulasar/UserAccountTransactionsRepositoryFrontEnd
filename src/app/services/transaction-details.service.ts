@@ -16,7 +16,7 @@ export class TransactionDetailsService {
   constructor(private http: HttpClient) { }
 
   getTransactionDetailsByAccountCode(code:Number):Observable<any>{
-    return this.http.get(`${this.apiUrl}/api/GetTransactionDetailsByAccountCode/${code}`)
+    return this.http.get(`${this.apiUrl}/api/GetTransactionDetailsByCode/${code}`)
     .pipe(
       catchError(error => {
         console.error('There was an error!', error);

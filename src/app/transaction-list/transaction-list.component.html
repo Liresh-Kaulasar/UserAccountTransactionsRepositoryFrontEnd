@@ -6,7 +6,7 @@
                 <th scope="col" class="table-color"></th>
                 <th scope="col" class="table-color"></th>
                 <th scope="col" class="table-color"></th>
-                <th scope="col" class="table-color"> <a href="#" class="btn btn-outline-light table-button">Add New</a> </th>
+                <th scope="col" class="table-color"> <button (click)="openAddTransactionPage()" class="btn btn-outline-light table-button">Add New</button> </th>
             </tr>
             <tr>
                 <th scope="col">Transaction Date</th>
@@ -18,11 +18,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let transaction of transactionList">
-                <td>{{transaction.transaction_date}}</td>
-                <td>{{transaction.capture_date}}</td>
+                <td>{{transaction.transaction_date | date: 'dd-MM-yyyy HH:mm:ss'}}</td>
+                <td>{{transaction.capture_date | date: 'dd-MM-yyyy HH:mm:ss'}}</td>
                 <td>{{transaction.description}}</td>
                 <td>R {{transaction.amount.toFixed(2)}}</td>
-                <td><a href="#" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><button (click)="openTransactionDetails(transaction.code)" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
             </tr>
         </tbody>
     </table>

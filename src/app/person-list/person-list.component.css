@@ -52,3 +52,17 @@
     padding-top: 30px;
 }
 
+.span-space{
+    width:50px !important;
+}
+
+.pagination-controls {
+    text-align: center;
+  }
+  
+  button[disabled],
+  button[disabled]:hover {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
