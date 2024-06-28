@@ -38,7 +38,10 @@ export class AccountListComponent {
   }
 
   openAccountDetails(accountCode:Number):void{
-    this.router.navigate(['account-details',accountCode,this.personAccountCode])
+    this.router.navigate(['account-details',accountCode,this.personAccountCode]);
   }
-
+  
+  openAddAccountPage():void{
+    this.router.navigate(['create-account',this.personAccountCode])
+  }
 }

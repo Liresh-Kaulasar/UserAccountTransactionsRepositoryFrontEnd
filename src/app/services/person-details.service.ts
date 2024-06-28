@@ -78,10 +78,24 @@ export class PersonDetailsService {
   }
 
   updatePersonDetails(person: Person): Observable<any>{
-    return this.http.post(`${this.apiUrl}/api/UpdatePersonalDetails`,person);
+    return this.http.post(`${this.apiUrl}/api/UpdatePersonalDetails`,person)
+    .pipe(
+      catchError(error => {
+        console.error('There was an error!', error);
+
+        return throwError(`There was an error! ${error.error}`);
+      })
+    );
   }
 
   addPersonDetails(person:Person): Observable<any>{
-    return this.http.post(`${this.apiUrl}/api/CreatePerson`,person);
+    return this.http.post(`${this.apiUrl}/api/CreatePerson`,person)
+    .pipe(
+      catchError(error => {
+        console.error('There was an error!', error);
+
+        return throwError(`There was an error! ${error.error}`);
+      })
+    );
   }
 }

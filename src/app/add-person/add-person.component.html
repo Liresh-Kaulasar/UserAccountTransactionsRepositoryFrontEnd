@@ -1,4 +1,7 @@
 <div class="container">
+    <div *ngIf="this.showAlertWithErrorMessage.visible == true" class="alert alert-danger" role="alert">
+        {{this.showAlertWithErrorMessage.message}}
+      </div>
     <div class="row">
             <form #addForm ="ngForm">
                 <div class="card" style="width: 18rem;">    

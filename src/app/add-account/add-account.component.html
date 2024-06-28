@@ -1,8 +1,8 @@
 <div class="container">
-    <div *ngIf="this.showAlertWithErrorMessage.visible == true" class="alert alert-danger" role="alert">
+    <div *ngIf="this.showAlertWithErrorMessage.visible" class="alert alert-danger" role="alert">
         {{this.showAlertWithErrorMessage.message}}
     </div>
-
+    
     <div class="row">
         <form #accountForm="ngForm">
             <div class="card" style="width: 18rem;">    
@@ -20,7 +20,7 @@
 
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-default">Outstanding Balance</span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" name="outstanding_balance"  aria-describedby="inputGroup-sizing-default" [value]="'R '+this.account.outstanding_balance" disabled>
+                            <input type="number" class="form-control" aria-label="Sizing example input" name="outstanding_balance"  aria-describedby="inputGroup-sizing-default" [(ngModel)]="this.account.outstanding_balance" required>
                         </div>
                     </div>
                     <div class="col-sm-3"></div>
@@ -30,10 +30,9 @@
                         <button (click)="cancel()" class="btn btn-outline-secondary card-button">Cancel</button>
                     </div>
                     <div class="col">
-                        <button (click)="updateAccountDetails(account)" class="btn btn-outline-primary card-button" [disabled]="accountForm.invalid">Submit</button>
+                        <button (click)="addAccountDetails(account)" class="btn btn-outline-primary card-button" [disabled]="accountForm.invalid">Submit</button>
                     </div>
                 </div>
-                <app-transaction-list></app-transaction-list>
                 </div>
             </div> 
         </form>

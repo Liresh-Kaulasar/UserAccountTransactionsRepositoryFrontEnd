@@ -30,12 +30,28 @@ export class AccountDetailsService {
     .pipe(
       catchError(error => {
         console.error('There was an error!', error);
-        return throwError('Something bad happened; please try again later.');
+        return throwError(`There was an error! ${error}`);
       })
     );
-  };
+  }
 
   updateAccountDetails(account:Account):Observable<any>{
-    return this.http.post(`${this.apiUrl}/api/UpdateAccountDetails`,account);
+    return this.http.post(`${this.apiUrl}/api/UpdateAccountDetails`,account)
+    .pipe(
+      catchError(error => {
+        console.error('There was an error!', error);
+        return throwError(`There was an error! ${error.error}`);
+      })
+    );
+  }
+
+  addAccountDetails(account:Account):Observable<any>{
+    return this.http.post(`${this.apiUrl}/api/CreateAccount`,account)
+    .pipe(
+      catchError(error => {
+        console.error('There was an error!', error);
+        return throwError(`There was an error! ${error.error}`);
+      })
+    );
   }
 }

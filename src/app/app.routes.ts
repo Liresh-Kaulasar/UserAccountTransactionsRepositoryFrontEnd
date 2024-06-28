@@ -7,6 +7,7 @@ import { PersonDetailsComponent } from './person-details/person-details.componen
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { AddAccountComponent } from './add-account/add-account.component';
 
 const routeConfig: Routes = [
     {
@@ -38,6 +39,11 @@ const routeConfig: Routes = [
         path:'create-person',
         component: AddPersonComponent,
         title: 'Add Person'
+    },
+    {
+        path:'create-account/:id',
+        component: AddAccountComponent,
+        title: 'Add Account'
     },
     {
         path:'person-details/:id',

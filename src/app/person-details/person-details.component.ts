@@ -8,6 +8,7 @@ import { Person } from '../interfaces/person';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { response } from 'express';
+import { error } from 'console';
 
 @Component({
   selector: 'app-person-details',
@@ -20,13 +21,16 @@ export class PersonDetailsComponent implements OnInit{
 
   itemId:Number= 0;
 
-  personAccountCode: string="";
-
   person : Person = {
     code:0,
     name:"",
     surname:"",
     id_number:""
+  }
+
+  showAlertWithErrorMessage = {
+    "visible":false,
+    "message":""
   }
 
   constructor(private route: ActivatedRoute, private router: Router, private location: Location, private personalDetialsService: PersonDetailsService) { 
@@ -39,7 +43,6 @@ export class PersonDetailsComponent implements OnInit{
       console.log("This is the id => "+this.itemId);
       this.personalDetialsService.getPersonDetailsByCode(this.itemId).subscribe(response => {
         this.person = response as Person;
-        this.personAccountCode = this.person.code.toString();
       });
     });
   }
@@ -51,6 +54,12 @@ export class PersonDetailsComponent implements OnInit{
   updatePersonDetails(person:Person){
     console.log(person);
     this.personalDetialsService.updatePersonDetails(person).subscribe(response => {
-    this.router.navigate(["person-list"])});
+      this.showAlertWithErrorMessage.visible = false;
+    this.router.navigate(["person-list"])},
+    error=>{
+      this.showAlertWithErrorMessage.visible = true;
+      this.showAlertWithErrorMessage.message = error.toString();
+    }
+  );
   }
 }
